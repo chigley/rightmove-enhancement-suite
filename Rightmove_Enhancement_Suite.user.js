@@ -17,6 +17,9 @@ function selectItem(item) {
     listItems.removeClass("RES-active-list-item");
     item.addClass("RES-active-list-item");
     currentlySelected = item;
+
+    // TODO: scroll only if new item is out of view
+    $('html, body').scrollTop(item.offset().top);
 }
 
 var listItems = $("[name=summary-list-item]");
