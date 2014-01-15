@@ -24,3 +24,10 @@ listItems.click(function () {
 	$(this).addClass("RES-active-list-item");
 });
 
+$('body').bind('keyup', function(e) {
+    var code = e.keyCode || e.which;
+    if (e.keyCode == 74) {
+    	// j
+        alert("j!");
+    }
+});
