@@ -13,10 +13,10 @@ var $ = unsafeWindow.jQuery;
 
 GM_addStyle(GM_getResourceText("style"));
 
-$("#summaries li").mouseenter(function () {
+$("[name=summary-list-item]").mouseenter(function () {
 	$(this).addClass("hovered");
 });
 
-$("#summaries li").mouseleave(function () {
+$("[name=summary-list-item]").mouseleave(function () {
 	$(this).removeClass("hovered");
 });
