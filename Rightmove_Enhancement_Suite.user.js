@@ -19,10 +19,8 @@ var listItems = $("[name=summary-list-item]");
 // stand out against such listings
 $(".premium").css("background", "white");
 
-listItems.mouseenter(function () {
+listItems.click(function () {
+	listItems.removeClass("RES-active-list-item");
 	$(this).addClass("RES-active-list-item");
 });
 
-listItems.mouseleave(function () {
-	$(this).removeClass("RES-active-list-item");
-});
