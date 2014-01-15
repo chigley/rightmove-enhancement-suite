@@ -37,5 +37,10 @@ $('body').bind('keyup', function(e) {
         var next = currentlySelected.next("[name=summary-list-item]");
         if (next.length == 1)
             selectItem(next);
+    } else if (e.keyCode == 75) {
+        // k
+        var prev = currentlySelected.prev("[name=summary-list-item]");
+        if (prev.length == 1)
+            selectItem(prev);
     }
 });
