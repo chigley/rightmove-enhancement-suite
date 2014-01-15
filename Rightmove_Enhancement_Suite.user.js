@@ -13,13 +13,26 @@ var $ = unsafeWindow.jQuery;
 
 GM_addStyle(GM_getResourceText("style"));
 
+// From https://stackoverflow.com/questions/487073/check-if-element-is-visible-after-scrolling
+function isScrolledIntoView(elem)
+{
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
 function selectItem(item) {
     listItems.removeClass("RES-active-list-item");
     item.addClass("RES-active-list-item");
     currentlySelected = item;
 
-    // TODO: scroll only if new item is out of view
-    $('html, body').scrollTop(item.offset().top);
+    // TODO: only scroll as much as needed, not such that new item is at top
+    if (!isScrolledIntoView(item))
+        $('html, body').scrollTop(item.offset().top);
 }
 
 var listItems = $("[name=summary-list-item]");
