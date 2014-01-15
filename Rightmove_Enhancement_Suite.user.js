@@ -25,14 +25,24 @@ function isScrolledIntoView(elem)
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 
+// From https://stackoverflow.com/questions/4217962/scroll-to-an-element-using-jquery
+$.fn.scrollMinimal = function() {
+    var cTop = this.offset().top;
+    var cHeight = this.outerHeight(true);
+    var windowTop = $(window).scrollTop();
+    var visibleHeight = $(window).height();
+
+    if (cTop < windowTop)
+        $(window).scrollTop(cTop);
+    else if (cTop + cHeight > windowTop + visibleHeight)
+        $(window).scrollTop(cTop - visibleHeight + cHeight);
+};
+
 function selectItem(item) {
     listItems.removeClass("RES-active-list-item");
     item.addClass("RES-active-list-item");
     currentlySelected = item;
-
-    // TODO: only scroll as much as needed, not such that new item is at top
-    if (!isScrolledIntoView(item))
-        $('html, body').scrollTop(item.offset().top);
+    item.scrollMinimal();
 }
 
 var listItems = $("[name=summary-list-item]");
