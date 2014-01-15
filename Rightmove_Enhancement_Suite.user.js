@@ -14,9 +14,9 @@ var $ = unsafeWindow.jQuery;
 GM_addStyle(GM_getResourceText("style"));
 
 $("[name=summary-list-item]").mouseenter(function () {
-	$(this).addClass("hovered");
+	$(this).addClass("RES-active-list-item");
 });
 
 $("[name=summary-list-item]").mouseleave(function () {
-	$(this).removeClass("hovered");
+	$(this).removeClass("RES-active-list-item");
 });
