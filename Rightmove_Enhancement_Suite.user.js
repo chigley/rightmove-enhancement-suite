@@ -47,7 +47,7 @@ listItems.click(function () {
     selectItem($(this));
 });
 
-$('body').bind('keyup', function(e) {
+$(window).bind('keyup', function(e) {
     var code = e.keyCode || e.which;
     if (e.keyCode == 74) {
         // j
