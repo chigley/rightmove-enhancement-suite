@@ -20,10 +20,14 @@ var currentlySelected;
 // stand out against such listings
 $(".premium").css("background", "white");
 
-listItems.click(function () {
+function selectItem(item) {
     listItems.removeClass("RES-active-list-item");
-    $(this).addClass("RES-active-list-item");
-    currentlySelected = $(this);
+    item.addClass("RES-active-list-item");
+    currentlySelected = item;
+}
+
+listItems.click(function () {
+    selectItem($(this));
 });
 
 $('body').bind('keyup', function(e) {
@@ -31,10 +35,7 @@ $('body').bind('keyup', function(e) {
     if (e.keyCode == 74) {
         // j
         var next = currentlySelected.next("[name=summary-list-item]");
-        if (next.length == 1) {
-            listItems.removeClass("RES-active-list-item");
-            next.addClass("RES-active-list-item");
-            currentlySelected = next;
-        }
+        if (next.length == 1)
+            selectItem(next);
     }
 });
