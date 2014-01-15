@@ -59,5 +59,9 @@ $('body').bind('keyup', function(e) {
         var prev = currentlySelected.prev("[name=summary-list-item]");
         if (prev.length == 1)
             selectItem(prev);
+    } else if (e.keyCode == 13) {
+        // enter
+        var url = currentlySelected.find(".price-new a").attr("href");
+        window.open(url, "_blank"); // TODO: avoid popup blockers?
     }
 });
