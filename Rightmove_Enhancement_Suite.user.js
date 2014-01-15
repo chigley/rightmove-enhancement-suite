@@ -21,20 +21,20 @@ var currentlySelected;
 $(".premium").css("background", "white");
 
 listItems.click(function () {
-	listItems.removeClass("RES-active-list-item");
-	$(this).addClass("RES-active-list-item");
-	currentlySelected = $(this);
+    listItems.removeClass("RES-active-list-item");
+    $(this).addClass("RES-active-list-item");
+    currentlySelected = $(this);
 });
 
 $('body').bind('keyup', function(e) {
     var code = e.keyCode || e.which;
     if (e.keyCode == 74) {
-    	// j
-    	var next = currentlySelected.next("[name=summary-list-item]");
-    	if (next.length == 1) {
-    		listItems.removeClass("RES-active-list-item");
-    		next.addClass("RES-active-list-item");
-    		currentlySelected = next;
-    	}
+        // j
+        var next = currentlySelected.next("[name=summary-list-item]");
+        if (next.length == 1) {
+            listItems.removeClass("RES-active-list-item");
+            next.addClass("RES-active-list-item");
+            currentlySelected = next;
+        }
     }
 });
