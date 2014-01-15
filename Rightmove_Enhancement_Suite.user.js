@@ -17,7 +17,7 @@ var listItems = $("[name=summary-list-item]");
 
 // Remove grey background on premium listings. Otherwise, my active item doesn't
 // stand out against such listings
-$(".premium[name=summary-list-item]").css("background", "white");
+$(".premium").css("background", "white");
 
 listItems.mouseenter(function () {
 	$(this).addClass("RES-active-list-item");
