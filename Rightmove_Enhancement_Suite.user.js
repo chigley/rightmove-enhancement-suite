@@ -13,18 +13,21 @@ var $ = unsafeWindow.jQuery;
 
 GM_addStyle(GM_getResourceText("style"));
 
-var listItems = $("[name=summary-list-item]");
-var currentlySelected;
-
-// Remove grey background on premium listings. Otherwise, my active item doesn't
-// stand out against such listings
-$(".premium").css("background", "white");
-
 function selectItem(item) {
     listItems.removeClass("RES-active-list-item");
     item.addClass("RES-active-list-item");
     currentlySelected = item;
 }
+
+var listItems = $("[name=summary-list-item]");
+
+// Select top item
+selectItem(listItems.first());
+var currentlySelected = listItems.first();
+
+// Remove grey background on premium listings. Otherwise, my active item doesn't
+// stand out against such listings
+$(".premium").css("background", "white");
 
 listItems.click(function () {
     selectItem($(this));
