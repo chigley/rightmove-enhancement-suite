@@ -13,14 +13,16 @@ var $ = unsafeWindow.jQuery;
 
 GM_addStyle(GM_getResourceText("style"));
 
+var listItems = $("[name=summary-list-item]");
+
 // Remove grey background on premium listings. Otherwise, my active item doesn't
 // stand out against such listings
 $(".premium[name=summary-list-item]").css("background", "white");
 
-$("[name=summary-list-item]").mouseenter(function () {
+listItems.mouseenter(function () {
 	$(this).addClass("RES-active-list-item");
 });
 
-$("[name=summary-list-item]").mouseleave(function () {
+listItems.mouseleave(function () {
 	$(this).removeClass("RES-active-list-item");
 });
