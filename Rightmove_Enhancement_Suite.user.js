@@ -13,18 +13,6 @@ var $ = unsafeWindow.jQuery;
 
 GM_addStyle(GM_getResourceText("style"));
 
-// From https://stackoverflow.com/questions/487073/check-if-element-is-visible-after-scrolling
-function isScrolledIntoView(elem)
-{
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-}
-
 // From https://stackoverflow.com/questions/4217962/scroll-to-an-element-using-jquery
 $.fn.scrollMinimal = function() {
     var cTop = this.offset().top;
