@@ -11,7 +11,7 @@ With [Greasemonkey](http://www.greasespot.net/) installed and enabled, clicking 
 Features
 --------
 
-- vim-like `h` and `j` keyboard shortcuts to move down and up listings respectively
+- vim-like `j` and `k` keyboard shortcuts to move down and up listings respectively
 - pressing the `ENTER` key opens a listing in a new tab/window
 - RES-like `]` and `[` keyboard shortcuts to cycle through property photos
 - removes annoying grey background from premium listings
