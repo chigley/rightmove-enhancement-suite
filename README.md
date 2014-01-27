@@ -3,10 +3,10 @@ rightmove-enhancement-suite
 
 Quick and dirty Greasemonkey user script adding basic RES-like keyboard shortcuts to Rightmove
 
-Usage
------
+Installation
+------------
 
-TODO
+With [Greasemonkey](http://www.greasespot.net/) installed and enabled, clicking here should prompt the installation process: https://github.com/chigley/rightmove-enhancement-suite/raw/master/Rightmove_Enhancement_Suite.user.js. The stylesheet should be downloaded automatically.
 
 Features
 --------
