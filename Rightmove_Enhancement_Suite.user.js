@@ -73,9 +73,15 @@ $(window).bind('keyup', function(e) {
         }
     } else if (e.keyCode == 221) {
         // ]
-        alert("next image");
+        var currentThumb = $(".js-gallery-thumbnail.selected");
+        var nextThumb = currentThumb.next(".js-gallery-thumbnail");
+        if (nextThumb.length == 1)
+            nextThumb.click();
     } else if (e.keyCode == 219) {
         // [
-        alert("prev image");
+        var currentThumb = $(".js-gallery-thumbnail.selected");
+        var prevThumb = currentThumb.prev(".js-gallery-thumbnail");
+        if (prevThumb.length == 1)
+            prevThumb.click();
     }
 });
