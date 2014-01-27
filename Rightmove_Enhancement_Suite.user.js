@@ -71,5 +71,11 @@ $(window).bind('keyup', function(e) {
             var url = currentlySelected.find(".price-new a").attr("href");
             window.open(url, "_blank"); // TODO: avoid popup blockers?
         }
+    } else if (e.keyCode == 221) {
+        // ]
+        alert("next image");
+    } else if (e.keyCode == 219) {
+        // [
+        alert("prev image");
     }
 });
