@@ -51,33 +51,33 @@ listItems.click(function () {
 
 $(window).bind('keyup', function(e) {
     var code = e.keyCode || e.which;
-    if (e.keyCode == 74) {
+    if (code == 74) {
         // j
         if (typeof currentlySelected !== "undefined") {
             var next = currentlySelected.next("[name=summary-list-item]");
             if (next.length == 1)
                 selectItem(next);
         }
-    } else if (e.keyCode == 75) {
+    } else if (code == 75) {
         // k
         if (typeof currentlySelected !== "undefined") {
             var prev = currentlySelected.prev("[name=summary-list-item]");
             if (prev.length == 1)
                 selectItem(prev);
         }
-    } else if (e.keyCode == 13) {
+    } else if (code == 13) {
         // enter
         if (typeof currentlySelected !== "undefined") {
             var url = currentlySelected.find(".price-new a").attr("href");
             window.open(url, "_blank"); // TODO: avoid popup blockers?
         }
-    } else if (e.keyCode == 221) {
+    } else if (code == 221) {
         // ]
         var currentThumb = $(".js-gallery-thumbnail.selected");
         var nextThumb = currentThumb.next(".js-gallery-thumbnail");
         if (nextThumb.length == 1)
             nextThumb.click();
-    } else if (e.keyCode == 219) {
+    } else if (code == 219) {
         // [
         var currentThumb = $(".js-gallery-thumbnail.selected");
         var prevThumb = currentThumb.prev(".js-gallery-thumbnail");
