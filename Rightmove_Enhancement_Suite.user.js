@@ -36,8 +36,10 @@ function selectItem(item) {
 var listItems = $("[name=summary-list-item]");
 
 // Select top item
-selectItem(listItems.first());
-var currentlySelected = listItems.first();
+if (listItems.length > 0) {
+    selectItem(listItems.first());
+    var currentlySelected = listItems.first();
+}
 
 // Remove grey background on premium listings. Otherwise, my active item doesn't
 // stand out against such listings
@@ -51,17 +53,23 @@ $(window).bind('keyup', function(e) {
     var code = e.keyCode || e.which;
     if (e.keyCode == 74) {
         // j
-        var next = currentlySelected.next("[name=summary-list-item]");
-        if (next.length == 1)
-            selectItem(next);
+        if (typeof currentlySelected !== "undefined") {
+            var next = currentlySelected.next("[name=summary-list-item]");
+            if (next.length == 1)
+                selectItem(next);
+        }
     } else if (e.keyCode == 75) {
         // k
-        var prev = currentlySelected.prev("[name=summary-list-item]");
-        if (prev.length == 1)
-            selectItem(prev);
+        if (typeof currentlySelected !== "undefined") {
+            var prev = currentlySelected.prev("[name=summary-list-item]");
+            if (prev.length == 1)
+                selectItem(prev);
+        }
     } else if (e.keyCode == 13) {
         // enter
-        var url = currentlySelected.find(".price-new a").attr("href");
-        window.open(url, "_blank"); // TODO: avoid popup blockers?
+        if (typeof currentlySelected !== "undefined") {
+            var url = currentlySelected.find(".price-new a").attr("href");
+            window.open(url, "_blank"); // TODO: avoid popup blockers?
+        }
     }
 });
