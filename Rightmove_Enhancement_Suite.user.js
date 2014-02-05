@@ -51,7 +51,9 @@ listItems.click(function () {
 
 $(window).bind('keyup', function(e) {
     var code = e.keyCode || e.which;
-    if (code == 74) {
+    if (code == 72) {
+        // h
+    } else if (code == 74) {
         // j
         if (typeof currentlySelected !== "undefined") {
             var next = currentlySelected.next("[name=summary-list-item]");
@@ -65,6 +67,12 @@ $(window).bind('keyup', function(e) {
             if (prev.length == 1)
                 selectItem(prev);
         }
+    } else if (code == 76) {
+        // l
+        var currentPage = $("#sliderBottom .current");
+        var nextPage = currentPage.parent().next().find("a");
+        if (typeof nextPage !== "undefined")
+            window.location = nextPage.attr("href");
     } else if (code == 13) {
         // enter
         if (typeof currentlySelected !== "undefined") {
