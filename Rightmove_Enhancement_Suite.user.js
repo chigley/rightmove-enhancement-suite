@@ -3,7 +3,7 @@
 // @namespace   https://github.com/chigley/
 // @description Keyboard shortcuts
 // @include     http://www.rightmove.co.uk/*
-// @version     0.1
+// @version     0.2
 // @grant       GM_addStyle
 // @grant       GM_getResourceText
 // @resource    style style.css
@@ -51,7 +51,14 @@ listItems.click(function () {
 
 $(window).bind('keyup', function(e) {
     var code = e.keyCode || e.which;
-    if (code == 74) {
+    if (code == 72) {
+        // h
+        var currentPage = $("#sliderBottom .current").parent();
+        currentPage.css("background", "red");
+        var prevPage = currentPage.prev();
+        if (prevPage.length == 1)
+            window.location = prevPage.find("a").attr("href");
+    } else if (code == 74) {
         // j
         if (typeof currentlySelected !== "undefined") {
             var next = currentlySelected.next("[name=summary-list-item]");
@@ -65,6 +72,12 @@ $(window).bind('keyup', function(e) {
             if (prev.length == 1)
                 selectItem(prev);
         }
+    } else if (code == 76) {
+        // l
+        var currentPage = $("#sliderBottom .current").parent();
+        var nextPage = currentPage.next().find("a");
+        if (nextPage.length == 1)
+            window.location = nextPage.attr("href");
     } else if (code == 13) {
         // enter
         if (typeof currentlySelected !== "undefined") {

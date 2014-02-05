@@ -12,6 +12,7 @@ Features
 --------
 
 - vim-like `j` and `k` keyboard shortcuts to move down and up listings respectively
+- vim-like `h` and `l` keyboard shortcuts to move to previous and next pages respectively
 - pressing the `ENTER` key opens a listing in a new tab/window
 - RES-like `]` and `[` keyboard shortcuts to cycle through property photos
 - removes annoying grey background from premium listings
