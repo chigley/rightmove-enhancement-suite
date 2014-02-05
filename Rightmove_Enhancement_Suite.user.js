@@ -53,10 +53,11 @@ $(window).bind('keyup', function(e) {
     var code = e.keyCode || e.which;
     if (code == 72) {
         // h
-        var currentPage = $("#sliderBottom .current");
-        var prevPage = currentPage.parent().prev().find("a");
-        if (typeof prevPage !== "undefined")
-            window.location = prevPage.attr("href");
+        var currentPage = $("#sliderBottom .current").parent();
+        currentPage.css("background", "red");
+        var prevPage = currentPage.prev();
+        if (prevPage.length == 1)
+            window.location = prevPage.find("a").attr("href");
     } else if (code == 74) {
         // j
         if (typeof currentlySelected !== "undefined") {
@@ -73,9 +74,9 @@ $(window).bind('keyup', function(e) {
         }
     } else if (code == 76) {
         // l
-        var currentPage = $("#sliderBottom .current");
-        var nextPage = currentPage.parent().next().find("a");
-        if (typeof nextPage !== "undefined")
+        var currentPage = $("#sliderBottom .current").parent();
+        var nextPage = currentPage.next().find("a");
+        if (nextPage.length == 1)
             window.location = nextPage.attr("href");
     } else if (code == 13) {
         // enter
