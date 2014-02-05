@@ -53,6 +53,10 @@ $(window).bind('keyup', function(e) {
     var code = e.keyCode || e.which;
     if (code == 72) {
         // h
+        var currentPage = $("#sliderBottom .current");
+        var prevPage = currentPage.parent().prev().find("a");
+        if (typeof prevPage !== "undefined")
+            window.location = prevPage.attr("href");
     } else if (code == 74) {
         // j
         if (typeof currentlySelected !== "undefined") {
