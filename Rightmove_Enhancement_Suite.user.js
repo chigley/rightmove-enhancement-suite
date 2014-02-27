@@ -57,7 +57,7 @@ $(window).bind('keyup', function(e) {
         currentPage.css("background", "red");
         var prevPage = currentPage.prev();
         if (prevPage.length == 1)
-            window.location = prevPage.find("a").attr("href");
+            window.location.href = prevPage.find("a").attr("href");
     } else if (code == 74) {
         // j
         if (typeof currentlySelected !== "undefined") {
@@ -77,7 +77,7 @@ $(window).bind('keyup', function(e) {
         var currentPage = $("#sliderBottom .current").parent();
         var nextPage = currentPage.next().find("a");
         if (nextPage.length == 1)
-            window.location = nextPage.attr("href");
+            window.location.href = nextPage.attr("href");
     } else if (code == 13) {
         // enter
         if (typeof currentlySelected !== "undefined") {
