@@ -3,7 +3,7 @@
 // @namespace   https://github.com/chigley/
 // @description Keyboard shortcuts
 // @include     http://www.rightmove.co.uk/*
-// @version     0.2
+// @version     0.3
 // @grant       GM_addStyle
 // @grant       GM_getResourceText
 // @resource    style style.css
